@@ -7,12 +7,17 @@
 * Java 11
 * MySQL
 * MyBatis
-* Spring Boot 
+* Spring Boot 2.7.8
 
 <br>
 
 ## 개발 기술 스택
 * Thymeleaf
+* Spring Boot
+* CSS
+* JavaScript
+* MySQL
+* Java
 
 <br>
 
