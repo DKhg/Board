@@ -45,3 +45,5 @@
 ## 게시글 삭제 화면
 ![게시글삭제](https://user-images.githubusercontent.com/106241314/218436396-9977b88b-6d08-4548-a38b-9503a315ddc6.png)
 <br>
+
+* [참고사이트](https://congsong.tistory.com/12)
