@@ -28,7 +28,7 @@ public class PostController {
         return "post/write";
     }
 
-    // 신규 게시글 생성
+    // 게시글 생성
     @PostMapping("/post/save.do")
     public String savePost(final PostRequest params) {
         postService.savePost(params);
@@ -36,12 +36,13 @@ public class PostController {
     }
 
 
-    // 게시글 리스트 페이지
+    // 게시글 목록 페이지
     @GetMapping("/post/list.do")
     public String openPostList(@ModelAttribute("params") final SearchDto params, Model model) {
-        //postService.viewCount(id);
+
         PagingResponse<PostResponse> response = postService.findAllPost(params);
         model.addAttribute("response", response);
+
         return "post/list";
     }
 
@@ -49,11 +50,12 @@ public class PostController {
     @GetMapping("/post/view.do")
     public String openPostView(@RequestParam final Long id, Model model) {
         PostResponse post = postService.findPostById(id);
+        postService.viewCount(id);
         model.addAttribute("post", post);
         return "post/view";
     }
 
-    // 기존 게시글 수정
+    // 게시글 수정
     @PostMapping("/post/update.do")
     public String updatePost(final PostRequest params) {
         postService.updatePost(params);

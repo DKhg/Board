@@ -94,11 +94,11 @@
         delete_yn = 0
     </select>
 
-    <!--
+    <!-- 게시글 조회수 카운팅 -->
     <update id="viewCount">
         UPDATE tb_post
-        SET viewCnt = viewCnt + 1
+        SET view_Cnt = view_Cnt + 1
         WHERE id=#{id};
     </update>
-    -->
+
 </mapper>

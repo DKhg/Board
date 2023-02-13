@@ -4,7 +4,8 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 
-@Getter //사용자에게 보여주는 클래스
+@Getter
+//사용자에게 보여주는 클래스
 public class PostResponse {
 
     private Long id;                       // PK
@@ -15,6 +16,6 @@ public class PostResponse {
     private Boolean noticeYn;              // 공지글 여부
     private Boolean deleteYn;              // 삭제 여부
     private LocalDateTime createdDate;     // 생성일시
-    private LocalDateTime modifiedDate;    // 최종 수정일시
+    private LocalDateTime modifiedDate;    // 수정일시
 
 }

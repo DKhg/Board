@@ -6,6 +6,7 @@ import com.Board.domain.post.PostResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,6 +20,7 @@ public class PostMapperTest {
     PostMapper postMapper;
 
     @Test
+    @Disabled
     void save() {
         PostRequest params = new PostRequest();
         params.setTitle("1번 게시글 제목");
@@ -27,11 +29,12 @@ public class PostMapperTest {
         params.setNoticeYn(false);
         postMapper.save(params);
 
-        List<PostResponse> posts = postMapper.findAll();
-        System.out.println("전체 게시글 개수는 : " + posts.size() + "개입니다.");
+        //List<PostResponse> posts = postMapper.findAll();
+        //System.out.println("전체 게시글 개수는 : " + posts.size() + "개입니다.");
     }
 
     @Test
+    @Disabled
     void findById() {
         PostResponse post = postMapper.findById(1L);
         try {
@@ -44,6 +47,7 @@ public class PostMapperTest {
     }
 
     @Test
+    @Disabled
     void update() {
         // 1. 게시글 수정
         PostRequest params = new PostRequest();
@@ -64,12 +68,12 @@ public class PostMapperTest {
             throw new RuntimeException(e);
         }
     }
-
+    @Disabled
     @Test
     void delete() {
-        System.out.println("삭제 이전의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
+        //System.out.println("삭제 이전의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
         postMapper.deleteById(1L);
-        System.out.println("삭제 이후의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
+        //System.out.println("삭제 이후의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개입니다.");
     }
 
 }

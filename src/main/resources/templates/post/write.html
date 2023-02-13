@@ -11,10 +11,10 @@
     <div class="content">
         <section>
             <form id="saveForm" method="post" autocomplete="off">
-                <!--/* 게시글 수정인 경우, 서버로 전달할 게시글 번호 (PK) */-->
+                <!-- 게시글 수정인 경우, 서버로 전달할 게시글 번호 (PK) -->
                 <input type="hidden" id="id" name="id" th:if="${post != null}" th:value="${post.id}" />
 
-                <!--/* 서버로 전달할 공지글 여부 */-->
+                <!-- 서버로 전달할 공지글 여부 -->
                 <input type="hidden" id="noticeYn" name="noticeYn" />
                 <table class="tb tb_row">
                     <colgroup>
@@ -51,7 +51,7 @@
                 <a th:href="@{/post/list.do}" class="btns btn_bdr3 btn_mid">뒤로</a>
             </p>
         </section>
-    </div> <!--/* .content */-->
+    </div> <!-- content -->
 </th:block>
 
 

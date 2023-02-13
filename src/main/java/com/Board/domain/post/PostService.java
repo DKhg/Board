@@ -17,52 +17,32 @@ public class PostService {
 
     private final PostMapper postMapper;
 
-    /**
-     * 게시글 저장
-     * @param params - 게시글 정보
-     * @return Generated PK
-     */
+    // 게시글 저장
     @Transactional
     public Long savePost(final PostRequest params) {
         postMapper.save(params);
         return params.getId();
     }
 
-    /**
-     * 게시글 상세정보 조회
-     * @param id - PK
-     * @return 게시글 상세정보
-     */
+    // 게시글 상세정보 조회
     public PostResponse findPostById(final Long id) {
         return postMapper.findById(id);
     }
 
-    /**
-     * 게시글 수정
-     * @param params - 게시글 정보
-     * @return PK
-     */
+    // 게시글 수정
     @Transactional
     public Long updatePost(final PostRequest params) {
         postMapper.update(params);
         return params.getId();
     }
 
-    /**
-     * 게시글 삭제
-     * @param id - PK
-     * @return PK
-     */
+    // 게시글 삭제
     public Long deletePost(final Long id) {
         postMapper.deleteById(id);
         return id;
     }
 
-    /**
-     * 게시글 리스트 조회
-     * @param params - search conditions
-     * @return list & pagination information
-     */
+    // 게시글 목록 조회
     public PagingResponse<PostResponse> findAllPost(final SearchDto params) {
 
         int count = postMapper.count(params);
@@ -77,15 +57,13 @@ public class PostService {
         return new PagingResponse<>(list, pagination);
     }
 
-    /**
-     *
-     * @param id
-     * @return
 
-    public Long viewCount(final Long id){
+
+    // 게시글 조회수 조회
+    public void viewCount(Long id){
         postMapper.viewCount(id);
-        return id;
+
     }
-    */
+
 
 }
